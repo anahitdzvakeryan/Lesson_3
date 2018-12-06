@@ -27,21 +27,22 @@ app.get("/",function(req, res){
     res.send("<h1>Hello world</h1>");
 });
 
-app.get("/:google", function(req, res){
-    var n = req.params.google;
-    res.redirect("http://google.com")
+// app.get("/:google", function(req, res){
+//     var n = req.params.google;
+//     res.redirect("http://google.com")
+// });
+
+app.get("/register", function(req,res){
+    var n = req.params.search;
+    res.redirect("/foo/bar");
 });
 
-app.get("/search", function(req,res){
-    res.redirect("/")
-});
+// app.get("/:name/:surname", function(req, res){
+//     var name = req.params.name
+//     var surname = req.params.surname
+//     res.send("<h1>Hello " + name + " " + surname + " </h1>");
 
-app.get("/:name/:surname", function(req, res){
-    var name = req.params.name
-    var surname = req.params.surname
-    res.send("<h1>Hello " + name + " " + surname + " </h1>");
-
-});
+// });
 app.listen(3000, function(){
     console.log("Example is running on port 3000");
 });
