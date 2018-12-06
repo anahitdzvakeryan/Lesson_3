@@ -23,18 +23,23 @@
 var express = require("express");
 var app = express();
 
-app.get("/",function(req, res){
-    res.send("<h1>Hello world</h1>");
-});
+// app.get("/",function(req, res){
+//     res.send("<h1>Hello world</h1>");
+// });
 
 // app.get("/:google", function(req, res){
 //     var n = req.params.google;
 //     res.redirect("http://google.com")
 // });
 
-app.get("/register", function(req,res){
-    var n = req.params.search;
-    res.redirect("/foo/bar");
+// app.get("/google/:search", function(req,res){
+//     var n = req.params.search;
+//     res.redirect("http://google.com/search?q=" + n);
+// });
+
+app.get("/*", function(req,res){
+    // var n = req.params.d;
+    res.redirect("404: Page not found", 404)
 });
 
 // app.get("/:name/:surname", function(req, res){
